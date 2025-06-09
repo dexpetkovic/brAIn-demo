@@ -17,6 +17,13 @@ Includes transactional DB support and custom authentication.
 
 ---
 
+### Demo
+See the demo for basic brAIn functionality below:
+
+https://github.com/user-attachments/assets/21390d92-6fea-485d-ad02-1e5e48c527c1
+
+---
+
 ### Getting Started
 
 #### 1. Requirements

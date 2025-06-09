@@ -20,7 +20,7 @@ Includes transactional DB support and custom authentication.
 ### Demo
 See the demo for basic brAIn functionality below:
 
-https://github.com/user-attachments/assets/21390d92-6fea-485d-ad02-1e5e48c527c1
+![brAIn-demo](https://github.com/user-attachments/assets/58948857-cd4d-4045-a099-be265030cf07)
 
 ---
 

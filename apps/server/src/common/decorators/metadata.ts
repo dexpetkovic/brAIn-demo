@@ -1,0 +1,1 @@
+export const ACCESS_METADATA = 'ACCESS_METADATA'

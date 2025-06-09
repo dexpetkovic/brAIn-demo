@@ -1,0 +1,15 @@
+version: '3'
+services:
+  brain_database:
+    image: 'postgres'
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: brainUser
+      POSTGRES_PASSWORD: brainPlatform123
+      POSTGRES_DB: brain
+    volumes:
+      - brain_db_volume:/var/lib/postgresql/data
+volumes:
+  brain_db_volume:
+    external: false

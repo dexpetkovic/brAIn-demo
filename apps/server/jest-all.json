@@ -1,0 +1,14 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".(e2e-spec|spec).ts$",
+  "testTimeout": 80000,
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "coverageDirectory": "./coverage/",
+  "collectCoverageFrom": ["src/**/*.ts"],
+  "coveragePathIgnorePatterns": ["src/.*mock\\.ts", "src/.*spec\\.ts"],
+  "maxWorkers": 3
+}

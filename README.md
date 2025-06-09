@@ -2,7 +2,9 @@
 
 Backend for WhatsApp-based AI customer support, built with NestJS. Handles WhatsApp webhook events, processes messages, and uses Google Gemini AI for automated replies.
 
-Includes transactional DB support and custom authentication.
+MCP server enables AI model to perform custom tasks: Store, update and retrieve memories. It can be extended with multiple other use cases, such as sending reminder messages to users.
+
+The implementation uses contextual Gemini chat, where the entire conversational context is loaded when starting a chat.
 
 ---
 

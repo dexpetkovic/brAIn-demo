@@ -1,0 +1,16 @@
+{
+  "RequestType": "Create",
+  "ServiceToken": "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:UpdateApiGwIntegrationLambda",
+  "ResponseURL": "https://cloudformation-custom-resource-response-useast1.s3.amazonaws.com/response-token",
+  "StackId": "arn:aws:cloudformation:us-east-1:ACCOUNT_ID:stack/brain-stack/stack-id",
+  "RequestId": "unique-request-id",
+  "LogicalResourceId": "UpdateApiGwIntegration",
+  "ResourceType": "Custom::UpdateApiGwIntegration",
+  "ResourceProperties": {
+    "ServiceToken": "arn:aws:lambda:us-east-1:ACCOUNT_ID:function:UpdateApiGwIntegrationLambda",
+    "ClusterArn": "arn:aws:ecs:us-east-1:ACCOUNT_ID:cluster/brain-stack-Cluster",
+    "ServiceName": "brain-stack-ServerService",
+    "ApiId": "abcd123456",
+    "Port": "3000"
+  }
+}

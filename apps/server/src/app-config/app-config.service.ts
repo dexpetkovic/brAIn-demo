@@ -26,6 +26,10 @@ const configSchema = z.object({
     .string()
     .default('false')
     .transform((val) => val === 'true'),
+  DATABASE_USE_SSL: z
+    .string()
+    .default('true')
+    .transform((val) => val === 'true'),
   PORT: z.coerce.number().positive().default(3000),
 
   AWS_ACCESS_KEY_ID: z.string().optional(),

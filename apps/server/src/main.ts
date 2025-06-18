@@ -33,7 +33,7 @@ async function bootstrap() {
   )
   SwaggerModule.setup('open-api', app, document)
 
-  await app.listen(3000)
+  await app.listen(3000, '0.0.0.0')
 
   const geminiService = app.get(GeminiAiService)
   await geminiService.connectMemoryClient()

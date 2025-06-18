@@ -42,6 +42,10 @@ USER node
 
 FROM public.ecr.aws/e0q6p4n4/node:20-alpine As production
 
+USER root
+RUN apk add --no-cache curl grep
+USER node
+
 COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=build /usr/src/app/dist ./dist
 

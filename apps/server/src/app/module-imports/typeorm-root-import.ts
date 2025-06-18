@@ -14,10 +14,12 @@ export type ConnectionParams =
     }
 export const typeOrmModuleOptions = ({
   runMigrations,
-  connectionParams
+  connectionParams,
+  useSsl
 }: {
   runMigrations: boolean
   connectionParams: ConnectionParams
+  useSsl: boolean
 }): TypeOrmModuleOptions => ({
   autoLoadEntities: true,
   type: 'postgres',
@@ -31,14 +33,18 @@ export const typeOrmModuleOptions = ({
   migrationsTableName: 'migrations',
   migrationsTransactionMode: 'all',
   migrationsRun: runMigrations,
-  synchronize: false
+  synchronize: false,
+  ssl: useSsl ? { rejectUnauthorized: false } : false
 })
 export const TypeOrmRootImport = TransactionalTypeormModule.forRootAsync({
   inject: [AppConfigService],
   imports: [AppConfigModule],
   useFactory: (appConfigService: AppConfigService) => {
-    const { db: connectionParams, DATABASE_RUN_MIGRATIONS: runMigrations } =
-      appConfigService.getConfig()
-    return typeOrmModuleOptions({ runMigrations, connectionParams })
+    const {
+      db: connectionParams,
+      DATABASE_RUN_MIGRATIONS: runMigrations,
+      DATABASE_USE_SSL: useSsl
+    } = appConfigService.getConfig()
+    return typeOrmModuleOptions({ runMigrations, connectionParams, useSsl })
   }
 })

@@ -1,0 +1,11 @@
+{
+  "availability-zones:account=940748924539:region=eu-central-1": [
+    "eu-central-1a",
+    "eu-central-1b",
+    "eu-central-1c"
+  ],
+  "hosted-zone:account=940748924539:domainName=elands.studio:region=eu-central-1": {
+    "Id": "/hostedzone/Z077926828Z43BXJ04WO1",
+    "Name": "elands.studio."
+  }
+}

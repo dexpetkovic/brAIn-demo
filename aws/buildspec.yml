@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+      - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
+      - IMAGE_URI="${REPOSITORY_URI}:${TAG}"
+  build:
+    commands:
+      - cp package-lock.json apps/server/ && cd apps/server/
+      - docker build -t "$IMAGE_URI" .
+      - docker tag "$IMAGE_URI" "${REPOSITORY_URI}:latest"
+      - cd ../..
+  post_build:
+    commands:
+      - docker push --all-tags "${REPOSITORY_URI}"
+      - printf '[{"name":"ServerContainer", "imageUri":"%s"}]' "$IMAGE_URI" > images.json
+artifacts:
+  files: images.json

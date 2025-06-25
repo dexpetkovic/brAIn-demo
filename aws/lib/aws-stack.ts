@@ -134,6 +134,14 @@ export class AwsStack extends cdk.Stack {
         WHATSAPP_WEBHOOK_API_KEY: ecs.Secret.fromSecretsManager(
           brainSecret,
           'WHATSAPP_WEBHOOK_API_KEY'
+        ),
+        GOOGLE_CALENDAR_ID: ecs.Secret.fromSecretsManager(
+          brainSecret,
+          'GOOGLE_CALENDAR_ID'
+        ),
+        GOOGLE_CALENDAR_SERVICE_ACCOUNT_EMAIL: ecs.Secret.fromSecretsManager(
+          brainSecret,
+          'GOOGLE_CALENDAR_SERVICE_ACCOUNT_EMAIL'
         )
       },
       portMappings: [{ containerPort: 3000 }]

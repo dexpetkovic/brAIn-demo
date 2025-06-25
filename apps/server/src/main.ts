@@ -36,7 +36,7 @@ async function bootstrap() {
   await app.listen(3000, '0.0.0.0')
 
   const geminiService = app.get(GeminiAiService)
-  await geminiService.connectMemoryClient()
+  await geminiService.connectMcpClient()
 }
 
 bootstrap().catch(console.error)

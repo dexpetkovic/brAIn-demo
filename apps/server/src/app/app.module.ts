@@ -10,6 +10,7 @@ import { TypeOrmRootImport } from './module-imports/typeorm-root-import'
 import { ConversationModule } from '../conversation/conversation.module'
 import { AiModule } from '../ai/ai.module'
 import { MemoryModule } from '../memory/memory.module'
+import { CalendarModule } from '../calendar/calendar.module'
 
 @Module({
   imports: [
@@ -17,7 +18,8 @@ import { MemoryModule } from '../memory/memory.module'
     TypeOrmRootImport,
     ConversationModule,
     AiModule,
-    MemoryModule
+    MemoryModule,
+    CalendarModule
   ],
   controllers: [ServerStatusController],
   providers: [

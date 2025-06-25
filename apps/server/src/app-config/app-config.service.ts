@@ -44,7 +44,9 @@ const configSchema = z.object({
     .string()
     .url()
     .default('https://wasenderapi.com/api/send-message'),
-  WASENDER_API_KEY: z.string()
+  WASENDER_API_KEY: z.string(),
+  GOOGLE_CALENDAR_ID: z.string(),
+  GOOGLE_CALENDAR_SERVICE_ACCOUNT_EMAIL: z.string().email()
 })
 
 export type EnvConfig = z.infer<typeof configSchema> & {
